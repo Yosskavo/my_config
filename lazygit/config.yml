@@ -1,0 +1,43 @@
+# ==========================================
+# LAZYGIT UI & TOKYONIGHT THEME
+# ==========================================
+gui:
+  # Enable Nerd Font icons for files and folders
+  showIcons: true
+  # Change from 'single' to 'rounded' for a modern aesthetic
+  border: 'rounded'
+  theme:
+    # Active Panel Border: Bold Magenta
+    activeBorderColor:
+      - '#bb9af7'
+      - 'bold'
+    # Inactive Panel Border: Dark Grey/Blue
+    inactiveBorderColor:
+      - '#414868'
+    # Text in the bottom options bar: Blue
+    optionsTextColor:
+      - '#7aa2f7'
+    # Background of the currently selected line: Dark Blue
+    selectedLineBgColor:
+      - '#33467c'
+    # Colors for cherry-picked commits
+    cherryPickedCommitBgColor:
+      - '#7dcfff'
+    cherryPickedCommitFgColor:
+      - '#1a1b26'
+    # Color for files with unstaged changes: Bright Red
+    unstagedChangesColor:
+      - '#f7768e'
+    # Default text color: Light Blue/White
+    defaultFgColor:
+      - '#c0caf5'
+# ==========================================
+# GIT PREFERENCES
+# ==========================================
+git:
+  pagers:
+    - # Automatically colors your git diffs using the internal pager
+      colorArg: always
+      pager: '' # If you use 'delta', change this to 'delta --dark --paging=never'
+  # Useful if you are working on massive academic repositories
+  disableForcePushing: false
