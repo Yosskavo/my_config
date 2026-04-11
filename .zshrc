@@ -141,4 +141,17 @@ alias la='lsd -a'
 alias lla='lsd -la'
 alias lt='lsd --tree'
 
-
+# ==========================================
+# ZSH SUFFIX ALIASES (AUTO-OPEN IN NEOVIM)
+# ==========================================
+# Typing 'file.ext' will automatically run 'nvim file.ext'
+alias -s c='nvim'
+alias -s h='nvim'
+alias -s cpp='nvim'
+alias -s hpp='nvim'
+alias -s md='nvim'
+alias -s yaml='nvim'
+alias -s yml='nvim'
+alias -s json='nvim'
+alias -s txt='nvim'
+alias -s conf='nvim'
