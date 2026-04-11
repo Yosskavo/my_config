@@ -1,0 +1,29 @@
+# ==========================================
+# LSD MAIN CONFIGURATION
+# ==========================================
+# Enable Nerd Font icons
+icons:
+  when: auto
+  theme: fancy
+  separator: " "
+
+# Set the color theme to our custom TokyoNight file below
+color:
+  when: auto
+  theme: custom
+
+# Layout and Blocks
+layout: grid
+blocks:
+  - permission
+  - user
+  - size
+  - date
+  - name
+
+# Format the date nicely (e.g., 2026-04-11 21:30)
+date: "+%Y-%m-%d %H:%M"
+
+# Sort folders to the top automatically
+sorting:
+  dir-grouping: first

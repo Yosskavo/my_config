@@ -103,6 +103,8 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+
+
 alias cl=clear
 export PATH=$HOME/.local/bin:$PWD:$PATH
 source /home/yel-mota/.config/my-zsh-theme/yass.zsh-theme
@@ -113,6 +115,10 @@ alias light="xrandr --output DP-2 --brightness"
 gclone() {
     git clone "git@github.com:$1/$2.git" "$3"
 }
+
+
+export LS_COLORS="di=01;34:ex=01;32:ln=01;36:so=01;35:pi=33:or=01;31:*.tar=01;35:*.tgz=01;35:*.zip=01;35:*.jpg=01;33:*.png=01;33:*.mp3=01;35:*.cpp=01;36:*.hpp=01;36:*.c=01;36:*.h=01;36:*Makefile=01;33:*makefile=01;33:*.yaml=01;36:*.yml=01;36:*.json=01;36"
+
 
 export XDG_DATA_DIRS=$XDG_DATA_DIRS:/goinfre/smakkass/.local/share/flatpak/exports/share
 
@@ -134,3 +140,5 @@ alias l='lsd -l'
 alias la='lsd -a'
 alias lla='lsd -la'
 alias lt='lsd --tree'
+
+

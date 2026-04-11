@@ -1,0 +1,41 @@
+# ==========================================
+# TOKYONIGHT LSD COLORS
+# ==========================================
+# Who owns the file
+user: '#7dcfff'       # Cyan
+group: '#7aa2f7'      # Blue
+
+# File Permissions
+permission:
+  read: '#9ece6a'     # Green
+  write: '#e0af68'    # Yellow
+  exec: '#f7768e'     # Red
+  exec-sticky: '#bb9af7'
+  no-access: '#414868' # Dark Grey
+  octal: '#7dcfff'
+  acl: '#7dcfff'
+  context: '#7dcfff'
+
+# File Modification Dates
+date:
+  hour-old: '#bb9af7' # Magenta (Recently changed)
+  day-old: '#7aa2f7'  # Blue
+  older: '#414868'    # Dark Grey (Old files)
+
+# File Sizes
+size:
+  none: '#414868'     # Dark Grey
+  small: '#9ece6a'    # Green
+  medium: '#e0af68'   # Yellow
+  large: '#f7768e'    # Red (Big files stand out)
+
+inode:
+  valid: '#bb9af7'
+  invalid: '#f7768e'
+
+links:
+  valid: '#bb9af7'
+  invalid: '#f7768e'
+
+# The lines drawn when you use the 'tree' command
+tree-edge: '#414868'  # Dark Grey
