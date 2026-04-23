@@ -1,0 +1,24 @@
+CompileFlags:
+  Add: [
+    "-isystem", "/usr/include/c++/11",
+    "-isystem", "/usr/include/x86_64-linux-gnu/c++/11",
+    "-isystem", "/usr/include/clang/14",
+    "-Wall",
+    "-Wextra",
+    "-Werror"
+  ]
+  # Language-specific flags
+  # This ensures C files use c89 and C++ files use c++98
+  Compiler: clang++
+
+---
+If:
+  PathMatch: .*\.cpp
+CompileFlags:
+  Add: [-std=c++98]
+
+---
+# If:
+#   PathMatch: .*\.c
+# CompileFlags:
+#   Add: [-std=c89]

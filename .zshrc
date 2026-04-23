@@ -106,7 +106,7 @@ source $ZSH/oh-my-zsh.sh
 
 
 alias cl=clear
-export PATH=$HOME/.local/bin:$PWD:$PATH
+export PATH=$HOME/.local/bin:$PWD:$PATH:$HOME/.nvm/versions/node/v25.9.0/bin:
 source /home/yel-mota/.config/my-zsh-theme/yass.zsh-theme
 export MAIL="yel-mota@student.1337.ma"
 alias light="xrandr --output DP-2 --brightness"
@@ -155,3 +155,23 @@ alias -s yml='nvim'
 alias -s json='nvim'
 alias -s txt='nvim'
 alias -s conf='nvim'
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+
+autoload -U compinit; compinit
+source /home/yel-mota/.oh-my-zsh/custom/plugins/fzf-tab/fzf-tab.plugin.zsh
+#
+# # Give the tab-completion menu the lsd treatment
+# zstyle ':fzf-tab:complete:*:*' fzf-preview 'lsd --color=always --icon=always $realpath'
+#
+# # Optional: Adjust the layout of the completion window
+# zstyle ':fzf-tab:*' fzf-flags '--height=40% --layout=reverse'
+#
+
+alias cat="bat"
+export BAT_THEME="Visual Studio Dark+"
+# Add this to your ~/.zshrc
+echo "$(( ($(date -d "2026-05-27" +%s) - $(date +%s)) / 86400 )) days until May 27"
