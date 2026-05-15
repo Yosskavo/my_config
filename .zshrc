@@ -117,7 +117,7 @@ gclone() {
 }
 
 
-export LS_COLORS="di=01;34:ex=01;32:ln=01;36:so=01;35:pi=33:or=01;31:*.tar=01;35:*.tgz=01;35:*.zip=01;35:*.jpg=01;33:*.png=01;33:*.mp3=01;35:*.cpp=01;36:*.hpp=01;36:*.c=01;36:*.h=01;36:*Makefile=01;33:*makefile=01;33:*.yaml=01;36:*.yml=01;36:*.json=01;36"
+export LS_COLORS="di=01;38;5;33:ex=01;38;5;150:ln=01;38;5;81:so=01;38;5;141:pi=38;5;179:or=01;38;5;196:*.tar=01;38;5;141:*.tgz=01;38;5;141:*.zip=01;38;5;141:*.jpg=01;38;5;179:*.png=01;38;5;179:*.mp3=01;38;5;141:*.cpp=01;38;5;81:*.hpp=01;38;5;141:*.c=01;38;5;81:*.h=01;38;5;99:*Makefile=01;38;5;179:*makefile=01;38;5;179:*.yaml=01;38;5;81:*.yml=01;38;5;81:*.json=01;38;5;81:*.o=00;38;5;60"
 
 
 export XDG_DATA_DIRS=$XDG_DATA_DIRS:/goinfre/smakkass/.local/share/flatpak/exports/share
@@ -126,9 +126,8 @@ export XDG_DATA_DIRS=$XDG_DATA_DIRS:/goinfre/smakkass/.local/share/flatpak/expor
 export EDITOR="nvim"
 export VISUAL="nvim"
 export MANPAGER="nvim +Man!"
-alias c="clear"
+alias c="/bin/cat"
 alias yst="cd $HOME/.config/nvim"
-alias cclean='bash ~/LinuxCleaner_42.sh'
 autoload -Uz zmv
 
 # export PATH=$PATH:/home/yel-mota/.spicetify
@@ -171,7 +170,39 @@ source /home/yel-mota/.oh-my-zsh/custom/plugins/fzf-tab/fzf-tab.plugin.zsh
 # zstyle ':fzf-tab:*' fzf-flags '--height=40% --layout=reverse'
 #
 
+
+export FZF_DEFAULT_OPTS="
+  --color=fg:153,bg:-1,hl:81 \
+  --color=fg+:153,bg+:235,hl+:81 \
+  --color=info:60,prompt:141,pointer:141 \
+  --color=marker:150,spinner:141,header:33"
+
 alias cat="bat"
-export BAT_THEME="Visual Studio Dark+"
+export BAT_THEME="Catppuccin Latte"
 # Add this to your ~/.zshrc
 echo "$(( ($(date -d "2026-05-27" +%s) - $(date +%s)) / 86400 )) days until May 27"
+
+# Use LS_COLORS for file completion
+zstyle ':completion:*:*:-command-:*:*' group-order alias builtins functions commands
+# -----------------------------------------------------------
+# FZF-TAB CONFIGURATION
+# -----------------------------------------------------------
+# 1. Use your LS_COLORS to colorize the files in the menu
+zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+
+# 2. Set the UI flags (TokyoNight colors, rounded borders, reverse layout)
+zstyle ':fzf-tab:*' fzf-flags \
+  '--color=prompt:141,hl:81,hl+:81,pointer:141,info:60,spinner:141' \
+  '--border=rounded' \
+  '--layout=reverse' \
+  '--height=80%'
+
+# 3. Set the preview window logic (handles both directories and files)
+zstyle ':fzf-tab:complete:*:*' fzf-preview 'if [ -d $realpath ]; then ls -1 --color=always $realpath; else (batcat --color=always --style=numbers $realpath || bat --color=always --style=numbers $realpath || cat $realpath) 2>/dev/null; fi'
+
+alias g="lazygit"
+
+alias cclean='bash ~/LinuxCleaner_42.sh'
+
+
+alias code="flatpak run com.visualstudio.code "
